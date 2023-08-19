@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: rgb(186,121,221);
+    background: linear-gradient(180deg, rgba(186,121,221,1) 0%, rgba(129,46,238,1) 59%);
+}
+
+.popup {
+    max-width: 900px;
+    min-height: 510px;
+    padding: 28px;
+    padding-left: 0;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position-x: 865%;
+    background-position-y: 67%;
+}
+
+@media (max-width: 500px) {
+    .popup {
+        max-width: 90%;
+        padding: 0;
+        top: 55%;
+        transform: translate(-50%, -45%);
+        min-height: auto;
+    }
+}
+
+.col-A {
+    flex: 0 0 50%;
+    max-width: 50%;
+    background-image: url('../images/illustration-woman-online-desktop.svg');
+    background-repeat: no-repeat;
+    background-position-x: -80px;
+    background-position-y: 50px;
+    position: relative;
+}
+
+@media (max-width: 500px) {
+    .col-A {
+        flex: 0 0 100%;
+        max-width: 100%;
+        display: none;
+    }
+}
+
+.col-A img {
+    position: absolute;
+    left: -28%;
+    top: 42%;
+}
+
+.col-A.active img {
+    left: -21%;
+    transition: .5s ease;
+}
+
+.col-B {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-B img {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .col-B {
+        flex: 0 0 100%;
+        max-width: 100%;
+        position: relative;
+        background-image: url('../images/bg-pattern-mobile.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+    }
+    .col-B img {
+        display: block;
+        width: 230px;
+        max-width: 230px;
+        position: absolute;
+        left: 50%;
+        top: -104px;
+        transform: translate(-50%, 0px);
+    }
+}
+
+.popup .content {
+    padding: 50px 30px 0;
+}
+
+@media (max-width: 500px) {
+    .popup .content {
+        padding: 130px 30px 50px;
+    }
+}
+
+button[type=button] {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 8px;
+    color: hsl(237, 12%, 33%);
+    transition: .5s ease;
+}
+
+.accordion_item.active button[type=button] {
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+button[type=button]:hover {
+    color: hsl(14, 88%, 65%);
+    transition: .2s ease;
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+.accordion_item {
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    padding: 10px 0;
+    transition: .5s ease;
+}
+
+.accordion_item .__header {
+    position: relative;
+}
+
+.accordion_item .__header::after {
+    position: absolute;
+    left: 100%;
+    top: 45%;
+    content: "";
+    display: block;
+    background-image: url('../images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+    transform: rotate(0deg);
+    transition: .5s ease;
+}
+
+.accordion_item.active .__header::after {
+    transform: rotate(180deg);
+    top: 30%;
+}
+
+.accordion_item .__body p {
+    color: hsl(240, 6%, 50%);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.accordion_item .__body.hide {
+    display: none;
+}
+
+.accordion_item.active .__body.hide {
+    display: block;
+}
+
+.attribution {
+    color: #fff;
+    background: rgb(76 66 241);
+    font-size: 14px; 
+    text-align: center; 
+    font-weight: 700;
+    padding: 15px 0;
+}
+
+.attribution a {
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+.attribution a:hover {
+    font-size: 16px;
+    transition: 0.5s ease;
+}
